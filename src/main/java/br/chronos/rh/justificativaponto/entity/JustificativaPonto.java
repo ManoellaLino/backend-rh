@@ -194,13 +194,6 @@ public class JustificativaPonto {
 	public void setAssinaturaGestor(String assinaturaGestor) {
 		this.assinaturaGestor = assinaturaGestor;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 }
