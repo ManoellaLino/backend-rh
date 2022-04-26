@@ -1,4 +1,4 @@
-package br.chronos.rh.justificativa.entity;
+package br.chronos.rh.justificativaponto.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -193,6 +193,12 @@ public class JustificativaPonto {
 	}
 	public void setAssinaturaGestor(String assinaturaGestor) {
 		this.assinaturaGestor = assinaturaGestor;
+	}
+	
+	
+	
+	public JustificativaPonto orElse(Object object) {
+		return null;
 	}
 		
 	
