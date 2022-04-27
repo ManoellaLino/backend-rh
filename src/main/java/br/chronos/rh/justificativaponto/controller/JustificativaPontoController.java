@@ -15,7 +15,6 @@ import br.chronos.rh.justificativaponto.service.JustificativaPontoService;
 public class JustificativaPontoController {
 	
 	
-	
 	@Autowired
 	private JustificativaPontoService service;
 }

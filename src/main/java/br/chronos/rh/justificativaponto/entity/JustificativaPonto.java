@@ -1,6 +1,8 @@
 package br.chronos.rh.justificativaponto.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,11 +26,6 @@ public class JustificativaPonto {
 	private String apJustificativaPonto;
 	
 	
-	// adicionar checkbox e opções, pesquisar métodos, INCOMPLETO
-	@Column (name = "tx_campo_setor")
-	private Boolean campoSetor;
-	
-	
 	@Column (name = "tx_aviso_formulario")
 	private String avisoFormulario;
 	
@@ -46,12 +43,7 @@ public class JustificativaPonto {
 	
 	@Column(name = "dt_entrega")
 	private LocalDateTime dataEntrega;
-	
-	
-	// adicionar checkbox e opções, pesquisar métodos, INCOMPLETO
-	@Column (name = "tx_motivo_justificativa")
-	private Boolean motivoJustificativa;
-	
+
 	
 	
 	//limitar a entrada de dados, 200 caracteres
@@ -66,6 +58,17 @@ public class JustificativaPonto {
 	
 	@Column (name = "tx_assinatura_gestor")
 	private String assinaturaGestor;
+	
+	
+	
+	
+	@Column (name = "tx_status_campo_setor")
+	@Enumerated(EnumType.STRING)
+	private StatusCampoSetor statusCampoSetor;
+	
+	@Column (name = "tx_motivo_Justificativa")
+	@Enumerated(EnumType.STRING)
+	private StatusCampoSetor statusMotivoJustificativa;
 	
 	
 	
@@ -98,11 +101,11 @@ public class JustificativaPonto {
 	
 	
 	
-	public Boolean getCampoSetor() {
-		return campoSetor;
+	public StatusCampoSetor getCampoSetor() {
+		return statusCampoSetor;
 	}
-	public void setCampoSetor(Boolean campoSetor) {
-		this.campoSetor = campoSetor;
+	public void setCampoSetor(StatusCampoSetor statusCampoSetor) {
+		this.statusCampoSetor = statusCampoSetor;
 	}
 
 	
@@ -158,11 +161,11 @@ public class JustificativaPonto {
 	
 	
 	
-	public Boolean getMotivoJustificativa() {
-		return motivoJustificativa;
+	public StatusCampoSetor getMotivoJustificativa() {
+		return statusMotivoJustificativa;
 	}
-	public void setMotivoJustificativa(Boolean motivoJustificativa) {
-		this.motivoJustificativa = motivoJustificativa;
+	public void setMotivoJustificativa(StatusCampoSetor motivoJustificativa) {
+		this.statusMotivoJustificativa = motivoJustificativa;
 	}
 
 	
