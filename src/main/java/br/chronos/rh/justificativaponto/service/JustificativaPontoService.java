@@ -1,10 +1,13 @@
 package br.chronos.rh.justificativaponto.service;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.cassandra.CassandraProperties.Request;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import br.chronos.rh.config.query.GenericSpesification;
+import br.chronos.rh.config.query.Request;
 import br.chronos.rh.justificativaponto.entity.JustificativaPonto;
 import br.chronos.rh.justificativaponto.repository.JustificativaPontoRepository;
 
@@ -18,6 +21,14 @@ public class JustificativaPontoService {
 	
 	
 	 public JustificativaPonto save (JustificativaPonto justificativaPonto) {
+		 
+		 
+		      //salva a data e hora em que foi feito o registro
+		      if (justificativaPonto.getID() == null) {
+			       justificativaPonto.setDataEntrega(LocalDateTime.now());
+		      }
+		      
+		      
 		return repository.save(justificativaPonto);
 	 }
 	
@@ -30,7 +41,6 @@ public class JustificativaPontoService {
 	
 	
 	 public Page <JustificativaPonto> findAll (Request request) {
-		return repository.findAll(new GerenicSpesification<>(request.getList()), request.getPageable());
+		return repository.findAll(new GenericSpesification<>(request.getList()), request.getPageable());
 	 }
-
 }

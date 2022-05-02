@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import br.chronos.rh.config.query.Request;
 import br.chronos.rh.justificativaponto.entity.JustificativaPonto;
 import br.chronos.rh.justificativaponto.service.JustificativaPontoService;
 
 
 @RestController
-@RequestMapping ("/justificativaPonto/justificativa-ponto")
+@RequestMapping ("/rh/justificativa-ponto")
 public class JustificativaPontoController {
 	
 	
@@ -34,6 +35,7 @@ public class JustificativaPontoController {
 				.buildAndExpand(jp.getID()).toUri()).body(jp);
 	}
 
+	
 	@PutMapping(value = "/update")
 	public ResponseEntity<JustificativaPonto> update(@RequestBody JustificativaPonto jp) {
 		service.save(jp);
@@ -41,13 +43,16 @@ public class JustificativaPontoController {
 				.buildAndExpand(jp.getID()).toUri()).body(jp);
 	}
 
+	
 	@PostMapping(value = "/find")
 	public ResponseEntity<Page<JustificativaPonto>> findAll(@RequestBody Request request) {
 		return ResponseEntity.ok(service.findAll(request));
 	}
 
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<JustificativaPonto> findOne(@PathVariable long id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
+	
 }

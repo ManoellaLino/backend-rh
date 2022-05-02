@@ -19,7 +19,8 @@ public class JustificativaPonto {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long ID;
+	private Long ID;
+	
 	
 	
 	@Column (name = "tx_ap_justificativa_ponto")
@@ -44,12 +45,10 @@ public class JustificativaPonto {
 	@Column(name = "dt_entrega")
 	private LocalDateTime dataEntrega;
 
-	
-	
+		
 	//limitar a entrada de dados, 200 caracteres
 	@Column (name = "tx_observacoes")
 	private String observacoes;
-	
 	
 	
 	//assinatura eletrônica, consultar necessidade
@@ -60,32 +59,26 @@ public class JustificativaPonto {
 	private String assinaturaGestor;
 	
 	
-	
-	
+		
 	@Column (name = "tx_status_campo_setor")
 	@Enumerated(EnumType.STRING)
 	private StatusCampoSetor statusCampoSetor;
 	
-	@Column (name = "tx_motivo_Justificativa")
+	@Column (name = "tx_status-motivo_Justificativa")
 	@Enumerated(EnumType.STRING)
-	private StatusCampoSetor statusMotivoJustificativa;
+	private StatusMotivoJustificativa statusMotivoJustificativa;
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Column (name = "tx_status-aprovacao")
+	@Enumerated(EnumType.STRING)
+	private StatusAprovacao statusAprovacao;
 	
 	
 	
 
-	public long getID() {
+	public Long getID() {
 		return ID;
 	}
-	public void setID(long iD) {
+	public void setID(Long iD) {
 		ID = iD;
 	}
 
@@ -158,17 +151,7 @@ public class JustificativaPonto {
 		this.dataEntrega = dataEntrega;
 	}
 
-	
-	
-	
-	public StatusCampoSetor getMotivoJustificativa() {
-		return statusMotivoJustificativa;
-	}
-	public void setMotivoJustificativa(StatusCampoSetor motivoJustificativa) {
-		this.statusMotivoJustificativa = motivoJustificativa;
-	}
 
-	
 	
 	
 	public String getObservacoes() {
@@ -198,11 +181,64 @@ public class JustificativaPonto {
 		this.assinaturaGestor = assinaturaGestor;
 	}
 	
-	
+
 	
 	public JustificativaPonto orElse(Object object) {
 		return null;
 	}
+
+	
+	
+	public StatusMotivoJustificativa getStatusMotivoJustificativa() {
+		return statusMotivoJustificativa;
+	}
+	public void setStatusMotivoJustificativa(StatusMotivoJustificativa statusMotivoJustificativa) {
+		this.statusMotivoJustificativa = statusMotivoJustificativa;
+	}
+	
+	
+	
+	
+	public StatusAprovacao getStatusAprovacao() {
+		return statusAprovacao;
+	}
+	public void setStatusAprovacao(StatusAprovacao statusAprovacao) {
+		this.statusAprovacao = statusAprovacao;
+	}
 		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

@@ -3,10 +3,10 @@ package br.chronos.rh.justificativaponto.entity;
 public enum StatusCampoSetor {
 	
 	
-	AGUARDANDO_INTERACAO,
+	CEREAL_COMERCIO_EXP_AGROP_SA,
 	
-	SELECIONE_UMa_OPCAO,
+	CEREAL_ARMAZENS_COMERCIO,
 	
-	SELECIONADO;
+	CEREAL_FAZENDA_E_GRANJA;
 	
 }
