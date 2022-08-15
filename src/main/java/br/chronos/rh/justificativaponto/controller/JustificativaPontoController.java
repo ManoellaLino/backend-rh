@@ -36,6 +36,8 @@ public class JustificativaPontoController {
 	}
 
 	
+	
+	
 	@PutMapping(value = "/update")
 	public ResponseEntity<JustificativaPonto> update(@RequestBody JustificativaPonto jp) {
 		service.save(jp);
@@ -49,6 +51,8 @@ public class JustificativaPontoController {
 		return ResponseEntity.ok(service.findAll(request));
 	}
 
+	
+	
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<JustificativaPonto> findOne(@PathVariable long id) {
